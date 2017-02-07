@@ -43,6 +43,11 @@
           <key>NSExceptionAllowsInsecureHTTPLoads</key>
           <true/>
         </dict>
+        <key>172.31.12.83</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <true/>
+        </dict>
         <key>m.facebook.com</key>
         <dict/>
         <key>graph.facebook.com</key>

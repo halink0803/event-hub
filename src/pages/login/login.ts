@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Facebook, NativeStorage } from 'ionic-native';
+import { Facebook, NativeStorage, Network } from 'ionic-native';
 import { UserPage } from '../user/user';
+import { ToastController } from 'ionic-angular';
 
 /*
   Generated class for the Login page.
@@ -9,16 +10,28 @@ import { UserPage } from '../user/user';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+
+// watch network for a disconnect
+let disconnectSubscription = Network.onDisconnect().subscribe(() => {
+  console.log('network was disconnected :-(');
+});
+
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
 })
+
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  doLogin() {
+    
   }
 
   fbLogin() {

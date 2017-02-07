@@ -46,9 +46,12 @@
     <access origin="https://api.facebook.com" />
     <access origin="https://*.fbcdn.net" />
     <access origin="https://*.akamaihd.net" />
-    <name>Event Hub</name>
     <feature name="NativeStorage">
         <param name="ios-package" value="NativeStorage" />
+    </feature>
+    <name>Event Hub</name>
+    <feature name="NetworkStatus">
+        <param name="ios-package" value="CDVConnection" />
     </feature>
     <name>Event Hub</name>
     <description>A place for all events</description>
@@ -56,6 +59,7 @@
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
+    <allow-navigation href="http://172.31.12.83:8100" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
