@@ -1,0 +1,38 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "194426564367310",
+            "APP_NAME": "eventHub",
+            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+        }
+    },
+    "dependent_plugins": {}
+}
