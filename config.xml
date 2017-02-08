@@ -41,4 +41,7 @@
     <variable name="APP_ID" value="194426564367310"/>
     <variable name="APP_NAME" value="eventHub"/>
   </plugin>
+  <plugin name="phonegap-plugin-push" spec="1.8.2">
+    <variable name="SENDER_ID" value="972428714274"/>
+  </plugin>
 </widget>
