@@ -6,10 +6,12 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { FeedsPage } from '../pages/feeds/feeds';
 import { LoginPage } from '../pages/login/login';
 import { Push } from 'ionic-native';
+import { EventService } from '../services/events.service';
 
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [EventService]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;

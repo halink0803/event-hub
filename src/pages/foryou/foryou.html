@@ -16,18 +16,17 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 	<ion-list>
-		<ion-item>
+		<ion-item *ngFor="let event of events" >
 			<ion-card>
-			  <img src="img/nin-live.png"/>
+			  <img src=""/>
 			  <ion-card-content>
 			    <ion-card-title>
-			      Nine Inch Nails Live
+			      {{event.name.text}}
 			      </ion-card-title>
 			    <p>
-			      The most popular industrial group ever, and largely
-			      responsible for bringing the music to a mass audience.
+			      {{event.description.text}}
 			    </p>
 			  </ion-card-content>
 			  <ion-row no-padding>
