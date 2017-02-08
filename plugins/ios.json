@@ -35,6 +35,10 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.ionicframework.newproject531488"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "972428714274",
+            "PACKAGE_NAME": "com.ionicframework.newproject531488"
         }
     },
     "dependent_plugins": {}

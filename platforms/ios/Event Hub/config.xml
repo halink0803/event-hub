@@ -49,9 +49,12 @@
     <feature name="NativeStorage">
         <param name="ios-package" value="NativeStorage" />
     </feature>
-    <name>Event Hub</name>
     <feature name="NetworkStatus">
         <param name="ios-package" value="CDVConnection" />
+    </feature>
+    <name>Event Hub</name>
+    <feature name="PushNotification">
+        <param name="ios-package" value="PushPlugin" />
     </feature>
     <name>Event Hub</name>
     <description>A place for all events</description>
