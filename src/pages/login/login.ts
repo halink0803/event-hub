@@ -38,17 +38,19 @@ export class LoginPage {
   	.then(function(response) {
   		let userId = response.authResponse.userID;
   		let params = new Array();
-
-  		Facebook.api('/me?fields=name,gender', params)
+      console.log(userId);
+  		Facebook.api('/me?fields=name,gender,email', params)
   		.then(function(user) {
-  			user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
-
+  			user.avatar = "https://graph.facebook.com/" + userId + "/picture?type=large";
+        console.log("What the hell???");
   			NativeStorage.setItem('user', {
   				name: user.name,
   				gender: user.gender,
-  				picture: user.picture
+  				avatar: user.avatar,
+          email: user.email
   			})
   			.then(function() {
+          console.log("Stored user");
   				nav.push(UserPage);
   			}, function(error) {
   				console.log(error);

@@ -72,9 +72,9 @@ export class ForyouPage {
     let loading = this.loadingCtrl.create({
       content: 'Please wait ...',
     });
-    loading.present();
+    // loading.present();
   	this.eventService.getEvents().subscribe(response => {
-      loading.dismiss();
+      // loading.dismiss();
   		this.events = response.events;
   		NativeStorage.setItem('events', this.events).then(
   			() => console.log('Stored item'),

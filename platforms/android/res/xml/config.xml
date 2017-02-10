@@ -40,7 +40,7 @@
     <name>Event Hub</name>
     <description>A place for all events</description>
     <author email="halink0803@gmail.com" href="http://halink0803.github.io/">Hoang Ha</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://172.31.12.83:8100" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-navigation href="http://172.31.12.83:8100" />
