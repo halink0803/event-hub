@@ -5,6 +5,7 @@ import { FeedsPage } from '../pages/feeds/feeds';
 import { LoginPage } from '../pages/login/login';
 import { Push } from 'ionic-native';
 import { EventService } from '../services/events.service';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class MyApp {
 
   rootPage = FeedsPage;
   menus : Array<{title: string, component: any}>;
+  authorize: boolean = false;
 
   constructor(public platform: Platform, public menu: MenuController, public alertCtrl: AlertController) {
 
@@ -88,5 +90,10 @@ export class MyApp {
     this.menu.close();
 
     this.nav.push(page.component);
+  }
+
+  toLogin() {
+    this.menu.close();
+    this.nav.push(LoginPage);
   }
 }

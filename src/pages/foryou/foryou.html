@@ -19,14 +19,14 @@
 <ion-content>
 	<ion-list>
 		<ion-item *ngFor="let event of events" >
-			<ion-card>
-			  <img src=""/>
+			<ion-card (click)="toDetail(event)">
+			  <img *ngIf="event.logo" src="{{event.logo.url}}"/>
 			  <ion-card-content>
 			    <ion-card-title>
 			      {{event.name.text}}
 			      </ion-card-title>
-			    <p>
-			      {{event.description.text}}
+			    <p *ngIf="event.description.text">
+			      {{event.description.text | limitTo: 100}}
 			    </p>
 			  </ion-card-content>
 			  <ion-row no-padding>

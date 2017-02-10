@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 import { EventService } from '../../services/events.service';
 import { Network, NativeStorage } from 'ionic-native';
+import { NetworkService } from '../../services/network.service';
+import { EventDetailPage } from '../event-detail/event-detail';
 
 /*
   Generated class for the Foryou page.
@@ -11,7 +13,7 @@ import { Network, NativeStorage } from 'ionic-native';
 */
 @Component({
   selector: 'page-foryou',
-  templateUrl: 'foryou.html'
+  templateUrl: 'foryou.html',
 })
 export class ForyouPage {
 	events: any;
@@ -33,13 +35,6 @@ export class ForyouPage {
       //   this.events = data;
       // })
   	});
-
-  	// Network.onchange().subscribe(() => {
-  	// 	if(!this.internetStatus) {
-  	// 		this.getEvents();
-  	// 		this.internetStatus = true;
-  	// 	}
-  	// });
 
     Network.onConnect().subscribe(() => {
       // this.getEvents();
@@ -87,6 +82,12 @@ export class ForyouPage {
   		);
 
   	});
+  }
+
+  toDetail(event) {
+    this.navCtrl.push(EventDetailPage, {
+      event: event
+    })
   }
 
 }

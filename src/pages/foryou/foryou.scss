@@ -1,8 +1,12 @@
 page-foryou {
 
-}
+	.card-title-md {
+		white-space: normal;
+		font-size: 24px;
+	}
 
-.card-title-md {
-	white-space: normal;
-	font-size: 24px;
+	.item-md p,
+	.item-ios p {
+		white-space: normal
+	}
 }
