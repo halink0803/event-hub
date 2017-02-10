@@ -21275,3 +21275,8 @@ sub {
     padding-top: calc(16px + 20px);
   }
 }
+
+.card-title-md {
+  white-space: normal;
+  font-size: 24px;
+}

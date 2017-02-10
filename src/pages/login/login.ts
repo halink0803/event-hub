@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Facebook, NativeStorage, Network } from 'ionic-native';
+import { Facebook, NativeStorage } from 'ionic-native';
 import { UserPage } from '../user/user';
 import { ToastController } from 'ionic-angular';
 
@@ -10,11 +10,6 @@ import { ToastController } from 'ionic-angular';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-
-// watch network for a disconnect
-let disconnectSubscription = Network.onDisconnect().subscribe(() => {
-  console.log('network was disconnected :-(');
-});
 
 
 @Component({

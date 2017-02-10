@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
+import { NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 import { EventService } from '../../services/events.service';
 import { Network, NativeStorage } from 'ionic-native';
 
@@ -18,7 +18,7 @@ export class ForyouPage {
 	internetStatus: boolean = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private eventService: EventService,
-  	public toastCrl: ToastController) {
+  	public toastCrl: ToastController, public loadingCtrl: LoadingController) {
 
   	Network.onDisconnect().subscribe(() => {
   		this.internetStatus = false;
@@ -27,7 +27,11 @@ export class ForyouPage {
   			message: 'Internet Disconnected',
   			duration: 3000
   		});
+      console.log(this.internetStatus);
   		toast.present();
+      // NativeStorage.getItem('events').then(data => {
+      //   this.events = data;
+      // })
   	});
 
   	// Network.onchange().subscribe(() => {
@@ -37,14 +41,31 @@ export class ForyouPage {
   	// 	}
   	// });
 
-  	if(this.internetStatus) {
-  		this.getEvents();
-  	} else {
-  		NativeStorage.getItem('events')
-  		.then(data => {
-  			this.events = data;
-  		});
-  	}
+    Network.onConnect().subscribe(() => {
+      // this.getEvents();
+      console.log("go online");
+    });
+
+    if(Network.type != 'none') {
+      this.getEvents();
+      console.log("load from online");
+    } else {
+      NativeStorage.getItem('events')
+      .then(data => {
+        this.events = data;
+        console.log("load from native storage");
+      })
+    }
+
+  	// if(this.internetStatus) {
+   //    console.log(this.internetStatus);
+  	// 	this.getEvents();
+  	// } else {
+  	// 	NativeStorage.getItem('events')
+  	// 	.then(data => {
+  	// 		this.events = data;
+  	// 	});
+  	// }
 
   }
 
@@ -53,7 +74,12 @@ export class ForyouPage {
   }
 
   getEvents() {
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait ...',
+    });
+    loading.present();
   	this.eventService.getEvents().subscribe(response => {
+      loading.dismiss();
   		this.events = response.events;
   		NativeStorage.setItem('events', this.events).then(
   			() => console.log('Stored item'),
