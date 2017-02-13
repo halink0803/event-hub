@@ -6,6 +6,7 @@ import { LoginPage } from '../pages/login/login';
 import { Push } from 'ionic-native';
 import { EventService } from '../services/events.service';
 import { AuthService } from '../services/auth.service';
+import { LocationPage } from '../pages/location/location';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class MyApp {
 
     this.menus = [
       {title: 'Login', component: LoginPage},
-      {title: 'Settings', component: FeedsPage}
+      {title: 'Home', component: FeedsPage},
+      {title: 'Location', component: LocationPage}
     ]
 
     platform.ready().then(() => {

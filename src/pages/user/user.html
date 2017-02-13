@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
     <ion-title>user</ion-title>
   </ion-navbar>
 
@@ -20,7 +23,7 @@
         <img *ngIf="user.avatar" src="{{user.avatar}}">
       </ion-avatar>
       <h2 *ngIf="user.name">{{user.name}}</h2>
-      <p *ngIf="user.name">{{user.email}}</p>
+      <p *ngIf="user.email">{{user.email}}</p>
 		</ion-item>
 	</ion-list>
 </ion-content>

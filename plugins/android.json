@@ -39,7 +39,14 @@
         "phonegap-plugin-push": {
             "SENDER_ID": "972428714274",
             "PACKAGE_NAME": "com.ionicframework.newproject531488"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.ionicframework.eventhub531488"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.eventhub531488"
+        }
+    }
 }

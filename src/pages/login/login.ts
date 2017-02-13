@@ -22,6 +22,12 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
     // Facebook.browserInit(this.FB_APP_ID, "v2.8");
+    NativeStorage.getItem('user')
+    .then(function(data) {
+      navCtrl.setRoot(UserPage);
+    }, function(error) {
+      console.log("Error: ", error);
+    })
   }
 
   ionViewDidLoad() {
@@ -35,7 +41,7 @@ export class LoginPage {
   fbLogin() {
   	let permissions = new Array();
   	let nav = this.navCtrl;
-  	permissions = ['public_profile'];
+  	permissions = ['public_profile', 'email'];
 
   	Facebook.login(permissions)
   	.then(function(response) {

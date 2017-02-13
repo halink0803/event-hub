@@ -21285,3 +21285,12 @@ page-foryou .item-md p,
 page-foryou .item-ios p {
   white-space: normal;
 }
+
+page-location .ios .scroll-content, page-location .md .scroll-content {
+  height: 100%;
+}
+
+page-location .ios #map, page-location .md #map {
+  width: 100%;
+  height: 100%;
+}

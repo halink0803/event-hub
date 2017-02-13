@@ -9,6 +9,7 @@ import { FeedsPage } from '../pages/feeds/feeds';
 import { ForyouPage } from '../pages/foryou/foryou';
 import { EventDetailPage } from '../pages/event-detail/event-detail';
 import { TruncatePipe } from  '../pipes/truncate.pipe';
+import { LocationPage } from '../pages/location/location';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TruncatePipe } from  '../pipes/truncate.pipe';
     FeedsPage,
     ForyouPage,
     EventDetailPage,
-    TruncatePipe
+    TruncatePipe,
+    LocationPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -35,6 +37,7 @@ import { TruncatePipe } from  '../pipes/truncate.pipe';
     FeedsPage,
     ForyouPage,
     EventDetailPage,
+    LocationPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

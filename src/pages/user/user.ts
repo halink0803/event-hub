@@ -14,11 +14,7 @@ import { Facebook, NativeStorage } from 'ionic-native';
   templateUrl: 'user.html'
 })
 export class UserPage {
-  user: {
-    name: '',
-    gender: '',
-    avatar: ''
-  };
+  user: any;
   userReady: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -35,7 +31,8 @@ export class UserPage {
   		env.user = {
   			name: data.name,
   			gender: data.gender,
-  			avatar: data.avatar
+  			avatar: data.avatar,
+        email: data.email
   		};
   		env.userReady = true;
   	}, function(error) {
