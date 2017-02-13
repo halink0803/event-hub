@@ -18,8 +18,11 @@ import { ToastController } from 'ionic-angular';
 })
 
 export class LoginPage {
+   FB_APP_ID: number = 194426564367310;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+    // Facebook.browserInit(this.FB_APP_ID, "v2.8");
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');

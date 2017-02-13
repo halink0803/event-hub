@@ -22,6 +22,16 @@ export class ForyouPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private eventService: EventService,
   	public toastCrl: ToastController, public loadingCtrl: LoadingController) {
 
+    NativeStorage.getItem('events').
+    then(
+      data => {
+        this.events = data;
+      },
+      error => {
+        console.log("Error:", error);
+      }
+    )
+
   	Network.onDisconnect().subscribe(() => {
   		this.internetStatus = false;
 

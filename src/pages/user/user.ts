@@ -14,11 +14,14 @@ import { Facebook, NativeStorage } from 'ionic-native';
   templateUrl: 'user.html'
 })
 export class UserPage {
-
-	user: any;
-	userReady: boolean = false;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  user: {
+    name: '',
+    gender: '',
+    avatar: ''
+  };
+  userReady: boolean = false;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserPage');
@@ -28,6 +31,7 @@ export class UserPage {
   	let env = this;
   	NativeStorage.getItem('user')
   	.then(function(data){
+      console.log(JSON.stringify(data));
   		env.user = {
   			name: data.name,
   			gender: data.gender,
