@@ -10,13 +10,19 @@
     <button ion-button menuToggle icon-only>
       <ion-icon name='menu'></ion-icon>
     </button>
-    <ion-title>user</ion-title>
+    <ion-title>My Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="card-background-page">
+  <ion-card>
+    <img src="https://scontent.xx.fbcdn.net/v/t31.0-8/s720x720/16299777_10202525723942465_6407553825482707946_o.jpg?oh=bb8a8de36778efd680eb365f49e8db71&oe=5949C96C"/>
+    <div class="card-title">São Paulo</div>
+    <div class="card-subtitle">41 Listings</div>
+  </ion-card>
+
 	<ion-list>
 		<ion-item *ngIf="userReady">
       <ion-avatar item-left>
@@ -26,4 +32,8 @@
       <p *ngIf="user.email">{{user.email}}</p>
 		</ion-item>
 	</ion-list>
+
+  <ion-item (click)="editAccount()" >Edit account</ion-item>
+
+  <button ion-button block (click)="logout()">Logout</button>
 </ion-content>

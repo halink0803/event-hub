@@ -7,6 +7,7 @@ import { Push } from 'ionic-native';
 import { EventService } from '../services/events.service';
 import { AuthService } from '../services/auth.service';
 import { LocationPage } from '../pages/location/location';
+import { UserPage } from '../pages/user/user';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { LocationPage } from '../pages/location/location';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage = FeedsPage;
+  rootPage = UserPage;
   menus : Array<{title: string, component: any}>;
   authorize: boolean = false;
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { Facebook, NativeStorage } from 'ionic-native';
+import { EditAccountPage } from '../edit-account/edit-account';
 
 /*
   Generated class for the User page.
@@ -49,6 +50,10 @@ export class UserPage {
   	}, function(error) {
   		console.log(error);
   	});
+  }
+
+  editAccount() {
+    this.navCtrl.push(EditAccountPage);
   }
 
 }
