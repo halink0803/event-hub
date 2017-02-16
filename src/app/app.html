@@ -1,20 +1,20 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-item>
+    <ion-item *ngIf="userReady">
       <ion-avatar item-left>
-        <img src="img/marty-avatar.png">
+        <img *ngIf="user.avatar" src="{{user.avatar}}">
       </ion-avatar>
-      <h2>Marty McFly</h2>
-      <p>November 5, 1955</p>
+      <h2 *ngIf="user.name">{{user.name}}</h2>
+      <p *ngIf="user.email">{{user.email}}</p>
     </ion-item>
   </ion-header>
 
   <ion-content>
     <ion-list>
+      <button ion-item *ngIf="!userReady" (click)="toLogin()">Login</button>
       <button ion-item *ngFor="let p of menus" (click)="openPage(p)">
         {{p.title}}
       </button>
-      <button *ngIf="authorize" (click)="toLogin()">Login</button>
     </ion-list>
   </ion-content>
 </ion-menu>

@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 import { NativeStorage } from 'ionic-native';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable()
 
 export class AuthService {
-	user: any;
-	userReady: boolean = false;
-	constructor(public authService: AuthService) {}
+	public userChange = new Subject<any>();
+
+	constructor() {}
 
 	login() {
 
+	}
+
+	updateUser(data) {
+		this.userChange.next(data);
 	}
 
 	fbLogin() {

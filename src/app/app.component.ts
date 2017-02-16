@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav,  AlertController } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar, Splashscreen, NativeStorage } from 'ionic-native';
 import { FeedsPage } from '../pages/feeds/feeds';
 import { LoginPage } from '../pages/login/login';
 import { Push } from 'ionic-native';
@@ -8,11 +8,12 @@ import { EventService } from '../services/events.service';
 import { AuthService } from '../services/auth.service';
 import { LocationPage } from '../pages/location/location';
 import { UserPage } from '../pages/user/user';
+import { Subscription } from 'rxjs/Subscription';
 
 
 @Component({
   templateUrl: 'app.html',
-  providers: [EventService]
+  providers: [EventService, AuthService]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -20,14 +21,24 @@ export class MyApp {
   rootPage = UserPage;
   menus : Array<{title: string, component: any}>;
   authorize: boolean = false;
+  user: any;
+  userReady: boolean = false;
+  _subscription : Subscription;
 
-  constructor(public platform: Platform, public menu: MenuController, public alertCtrl: AlertController) {
+  constructor(public platform: Platform, public menu: MenuController, public alertCtrl: AlertController, public authService: AuthService) {
 
     this.menus = [
-      {title: 'Login', component: LoginPage},
+      // {title: 'Login', component: LoginPage},
       {title: 'Home', component: FeedsPage},
       {title: 'Location', component: LocationPage}
     ]
+
+    this._subscription = this.authService.userChange.subscribe(
+      value => {
+        this.user = value;
+        this.userReady = true;
+      }
+    );
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
