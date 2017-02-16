@@ -100,4 +100,19 @@ export class ForyouPage {
     })
   }
 
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    this.eventService.getEvents().subscribe(response => {
+      // loading.dismiss();
+      this.events = response.events;
+      refresher.complete();
+      NativeStorage.setItem('events', this.events).then(
+        () => {
+          console.log('Stored item');
+        },
+        error => console.log('Error stroing item', error)
+      );
+
+    });
+  }
 }
