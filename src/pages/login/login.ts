@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Facebook, NativeStorage } from 'ionic-native';
 import { UserPage } from '../user/user';
 import { ToastController } from 'ionic-angular';
+import { AuthService } from '../../services/auth.service';
 
 /*
   Generated class for the Login page.
@@ -20,7 +21,7 @@ import { ToastController } from 'ionic-angular';
 export class LoginPage {
    FB_APP_ID: number = 194426564367310;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController, public authService: AuthService) {
     // Facebook.browserInit(this.FB_APP_ID, "v2.8");
     NativeStorage.getItem('user')
     .then(function(data) {
@@ -52,14 +53,17 @@ export class LoginPage {
   		.then(function(user) {
   			user.avatar = "https://graph.facebook.com/" + userId + "/picture?type=large";
         console.log("What the hell???");
-  			NativeStorage.setItem('user', {
-  				name: user.name,
-  				gender: user.gender,
-  				avatar: user.avatar,
+        let newUser = {
+          name: user.name,
+          gender: user.gender,
+          avatar: user.avatar,
           email: user.email
-  			})
+        };
+
+  			NativeStorage.setItem('user', newUser)
   			.then(function() {
           console.log("Stored user");
+          this.authService.updateUser(newUser);
   				nav.push(UserPage);
   			}, function(error) {
   				console.log(error);

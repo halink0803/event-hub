@@ -28,7 +28,6 @@ export class UserPage {
   	let env = this;
   	NativeStorage.getItem('user')
   	.then(function(data){
-      console.log(JSON.stringify(data));
   		env.user = {
   			name: data.name,
   			gender: data.gender,
