@@ -47,7 +47,6 @@ export class ForyouPage {
   	});
 
     Network.onConnect().subscribe(() => {
-      // this.getEvents();
       console.log("go online");
     });
 
@@ -95,7 +94,7 @@ export class ForyouPage {
   }
 
   toDetail(event) {
-    this.navCtrl.push(EventDetailPage, {
+    this.navCtrl.setRoot(EventDetailPage, {
       event: event
     })
   }
