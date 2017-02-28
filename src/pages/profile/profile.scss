@@ -1,0 +1,47 @@
+page-profile {
+	.toolbar {
+    .toolbar-background {
+      // background-size: cover;
+      background: transparent;
+    }
+  }
+
+  .scroll-content {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+  }
+
+  .cover {
+  	background: url('../assets/cover.jpg');
+  	background-size: cover;
+  	height: 200px;
+  	position: relative;
+  }
+
+  .user {
+  	position: absolute;
+  	bottom: 10px;
+  	left: 25px;
+  }
+
+  .username {
+  	color: white;
+  	margin: 0 0 10px 0;
+  	font-family: 'Lato', Arial, sans-serif;
+  	font-weight: bold;
+  }
+
+  .status {
+  	background: blue;
+    color: white;
+    text-align: center;
+    display: inline;
+    padding: 5px 15px;
+    border-radius: 14px;
+  }
+}
+
+.header::after {
+	background-image: none;
+}
+
