@@ -1,5 +1,6 @@
 <ion-menu [content]="content">
   <ion-header>
+    <img src="./assets/cover.jpg" />
     <ion-item *ngIf="userReady">
       <ion-avatar item-left>
         <img *ngIf="user.avatar" src="{{user.avatar}}">
@@ -11,7 +12,7 @@
 
   <ion-content>
     <ion-list>
-      <button ion-item *ngIf="!userReady" (click)="toLogin()">Login</button>
+      <button ion-item *ngIf="!userReady" (click)="toLogin()"><ion-icon name="key"></ion-icon>Login</button>
       <button ion-item *ngFor="let p of menus" (click)="openPage(p)">
         {{p.title}}
       </button>
@@ -20,6 +21,3 @@
 </ion-menu>
 
 <ion-nav [root]="rootPage" id="nav" #content></ion-nav>
-
-
-

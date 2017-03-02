@@ -8,39 +8,39 @@
     },
     "installed_plugins": {
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+            "PACKAGE_NAME": "com.ionicframework.eventhub531488"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+            "PACKAGE_NAME": "com.ionicframework.eventhub531488"
         },
         "cordova-plugin-facebook4": {
             "APP_ID": "194426564367310",
             "APP_NAME": "eventHub",
-            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+            "PACKAGE_NAME": "com.ionicframework.eventhub531488"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.ionicframework.eventhub531488"
         },
         "cordova-plugin-nativestorage": {
-            "PACKAGE_NAME": "com.ionicframework.newproject531488"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.newproject531488"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.newproject531488"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.newproject531488"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+            "PACKAGE_NAME": "com.ionicframework.eventhub531488"
         },
         "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.ionicframework.newproject531488"
+            "PACKAGE_NAME": "com.ionicframework.eventhub531488"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.eventhub531488"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.eventhub531488"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.eventhub531488"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.eventhub531488"
         },
         "phonegap-plugin-push": {
             "SENDER_ID": "972428714274",
-            "PACKAGE_NAME": "com.ionicframework.newproject531488"
-        },
-        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.ionicframework.eventhub531488"
         }
     },
